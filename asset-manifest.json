@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.b1ef447c.js",
+    "main.css": "/static/css/main.6e22d5e2.css",
+    "main.js": "/static/js/main.f7962991.js",
     "static/js/787.c6006e9a.chunk.js": "/static/js/787.c6006e9a.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/twitter_wrestler_parrotchair.jpg": "/static/media/twitter_wrestler_parrotchair.1b4ab1737dc452278b39.jpg",
+    "static/media/twitter_wrestler_kiltpunk.jpg": "/static/media/twitter_wrestler_kiltpunk.4214b77c8bb509b5eac4.jpg",
+    "static/media/rainbow.png": "/static/media/rainbow.e6eae60b3df1ae9adba0.png",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.b1ef447c.js.map": "/static/js/main.b1ef447c.js.map",
+    "main.6e22d5e2.css.map": "/static/css/main.6e22d5e2.css.map",
+    "main.f7962991.js.map": "/static/js/main.f7962991.js.map",
     "787.c6006e9a.chunk.js.map": "/static/js/787.c6006e9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.b1ef447c.js"
+    "static/css/main.6e22d5e2.css",
+    "static/js/main.f7962991.js"
   ]
 }
