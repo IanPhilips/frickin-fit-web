@@ -4,18 +4,17 @@ import parrot from './img/twitter_wrestler_parrotchair.jpg';
 
 
 import './App.css';
-import Row from "./Row";
 
 function App() {
   return (
       <div
           className={'App-header flex flex-col mx-auto w-full pb-14 bg-black min-h-screen justify-center overflow-hidden'}
       >
-        <Row className="gap-3 flex-col items-center justify-center md:flex-row w-full h-100">
+        <div className="flex gap-3 flex-col items-center justify-center mt-20 md:mt-2 md:flex-row w-full h-100">
         <img src={rainbow} className="App-logo" height={40} alt="logo" />
         <img src={parrot} className="App-logo"  height={40} alt="logo" />
         <img src={kilt} className="App-logo" height={40} alt="logo" />
-        </Row>
+        </div>
         <p className={"md:text-4xl text-2xl mt-24 text-white text-center"}>
           Welcome to The Frickin Fit Gymnasium
         </p>
