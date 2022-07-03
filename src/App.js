@@ -54,7 +54,7 @@ function App() {
         {/*<MoveExample/>*/}
 
         {/*Footer:*/}
-        <div className={"flex-col flex justify-center gap-5 my-8 absolute bottom-0 text-center w-full"}>
+        <div className={"flex-col flex justify-center gap-5 my-8 text-center w-full"}>
 
           <div className={"flex flex-row w-full justify-center gap-16 items-end sm:gap-20"}>
           <img src={credit} alt="credits" className="h-2.5 sm:h-4 sm:ml-14 ml-4"/>
