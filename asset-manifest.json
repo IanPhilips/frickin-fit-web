@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.306c0ad7.css",
-    "main.js": "/static/js/main.702e8207.js",
+    "main.css": "/static/css/main.6a37f16c.css",
+    "main.js": "/static/js/main.39e27354.js",
     "static/js/787.c6006e9a.chunk.js": "/static/js/787.c6006e9a.chunk.js",
-    "static/media/twitter_wrestler_parrotchair.jpg": "/static/media/twitter_wrestler_parrotchair.1b4ab1737dc452278b39.jpg",
-    "static/media/twitter_wrestler_kiltpunk.jpg": "/static/media/twitter_wrestler_kiltpunk.4214b77c8bb509b5eac4.jpg",
-    "static/media/background_iphonex.png": "/static/media/background_iphonex.c10245eb4c91ba491ff0.png",
     "static/media/start button.png": "/static/media/start button.3227e2a4c7520e4a0ad6.png",
-    "static/media/rainbow.png": "/static/media/rainbow.e6eae60b3df1ae9adba0.png",
+    "static/media/1000x_square.png": "/static/media/1000x_square.d9df78211a92576fdf79.png",
     "static/media/question_marquee.png": "/static/media/question_marquee.abb40432c8fab5a044ce.png",
     "static/media/are you ready.png": "/static/media/are you ready.516db66afb70300633f7.png",
     "static/media/frickinfit_large.png": "/static/media/frickinfit_large.53881c8313b5b1299569.png",
     "index.html": "/index.html",
-    "main.306c0ad7.css.map": "/static/css/main.306c0ad7.css.map",
-    "main.702e8207.js.map": "/static/js/main.702e8207.js.map",
+    "main.6a37f16c.css.map": "/static/css/main.6a37f16c.css.map",
+    "main.39e27354.js.map": "/static/js/main.39e27354.js.map",
     "787.c6006e9a.chunk.js.map": "/static/js/787.c6006e9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.306c0ad7.css",
-    "static/js/main.702e8207.js"
+    "static/css/main.6a37f16c.css",
+    "static/js/main.39e27354.js"
   ]
 }
