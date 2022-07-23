@@ -1,7 +1,4 @@
 import Marquee from "react-fast-marquee";
-import rainbow from './img/rainbow.png';
-import kilt from './img/twitter_wrestler_kiltpunk.jpg';
-import parrot from './img/twitter_wrestler_parrotchair.jpg';
 import welcomeMarquee from './img/welcomefriend_marquee.png';
 import questionMarquee from './img/question_marquee.png';
 import introText from './img/are you ready.png';
@@ -25,7 +22,7 @@ function App() {
   const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen overflow-hidden'
   return (
       <div
-          className={clsx(parentClass, 'bg-black bg-iphonex bg-contain bg-repeat bg-center')}
+          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat')}
       >
 
         <Marquee className={" mt-10"} gradient={false} speed={60} >
@@ -42,7 +39,7 @@ function App() {
         </div>
 
         <div className={'flex flex-row w-full justify-center'}>
-        <Marquee className={" mt-10 w-full sm:w-2/3"} direction={"right"} gradient={true} gradientColor={[0,0,0]} speed={30} gradientWidth={100} >
+        <Marquee className={" mt-10 w-full sm:w-2/3"} direction={"right"}  gradient={true} gradientColor={[0,0,0]} speed={30} gradientWidth={100} >
           {Array.from(Array(5).keys()).map(i =>
               <img key={i} src={questionMarquee} alt="Welcome Friend" className="h-5"/>)}}
         </Marquee>
