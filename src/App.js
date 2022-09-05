@@ -30,9 +30,9 @@ function App() {
     }
     const [wrestlerPosition, setWrestlerPosition] = useState(generateRandomPointOnScreen());
   const generateWrestler = () => {
-      setWrestlerPosition(generateRandomPointOnScreen())
       if (wrestlerVisible)
           return
+      setWrestlerPosition(generateRandomPointOnScreen())
       // count from 0 to wrestlers.length and then reset to 0
         if (wrestlerCount === wrestlers.length - 1) {
             setWrestlerCount(0);
