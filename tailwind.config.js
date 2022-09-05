@@ -8,8 +8,8 @@ module.exports = {
       display: ["group-hover"],
       keyframes: {
         wiggle: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" }
+          "0%": { transform: "scale(0.97)" },
+          "50%": { transform: "scale(1)" }
         },
         launch: {
           "0%": { transform: "" },

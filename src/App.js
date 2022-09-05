@@ -63,13 +63,12 @@ function App() {
           <img src={largeTitle} alt="Frickin fit" className="w-full max-w-2xl mx-auto px-2"/>
         </div>
 
-        <div className={'flex flex-row w-full justify-center'}>
-        <Marquee className={" mt-10 w-full sm:w-2/3"} direction={"right"}
+        <Marquee className={" mt-12 w-full self-center md:w-2/3"} direction={"right"}
                  gradient={true} gradientColor={[0,0,0]} speed={30} gradientWidth={100} >
-          {Array.from(Array(10).keys()).map(i =>
-              <img key={i} src={questionMarquee} alt="?????????" className="h-5"/>)}}
+              <img src={questionMarquee} alt="?????????" className="h-5"/>
+              <img src={questionMarquee} alt="?????????" className="h-5"/>
+              <img src={questionMarquee} alt="?????????" className="h-5"/>
         </Marquee>
-        </div>
 
        <div className="flex flex-col justify-center items-center mt-24">
          <div className={clsx("w-32 group z-10", buttonPressed && "animate-wiggle")}
