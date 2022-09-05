@@ -5,24 +5,49 @@ import introText from './img/are you ready.png';
 import largeTitle from './img/frickinfit_large.png';
 import credit from './img/credit.png';
 import insertCoin from './img/insertcoin.png';
+import insertCoinHover from './img/insert_coin_hover.png';
 import start from './img/start button.png';
+import startHover from './img/start_hover.png';
 import './App.css';
 import clsx from "clsx";
-import MoveExample from "./move-example";
+import {useState} from "react";
+import head1 from './img/transparent_wrestlers/80s_head.png'
+import head2 from './img/transparent_wrestlers/pinkkisshead.png'
+import head3 from './img/transparent_wrestlers/punkhead.png'
+import head4 from './img/transparent_wrestlers/tiarafloatinghead.png'
 
 function App() {
-  function generateRandomPointOnScreen() {
-    return {
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight
-    };
+  const [buttonPressed, setButtonPressed] = useState(false);
+  const wrestlers = [ head1,head2,head3,head4]
+  const [wrestler, setWrestler] = useState(head1);
+  const [wrestlerVisible, setWrestlerVisible] = useState(false);
+  const [wrestlerCount, setWrestlerCount] = useState(0);
+    function generateRandomPointOnScreen() {
+        return {
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight
+        };
+    }
+    const [wrestlerPosition, setWrestlerPosition] = useState(generateRandomPointOnScreen());
+  const generateWrestler = () => {
+      setWrestlerPosition(generateRandomPointOnScreen())
+      if (wrestlerVisible)
+          return
+      // count from 0 to wrestlers.length and then reset to 0
+        if (wrestlerCount === wrestlers.length - 1) {
+            setWrestlerCount(0);
+        }
+        else {
+            setWrestlerCount(wrestlerCount+1)
+        }
+    setWrestler(wrestlers[wrestlerCount])
+    setWrestlerVisible(true)
   }
-
 
   const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen overflow-hidden'
   return (
       <div
-          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat')}
+          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat overflow-x-hidden')}
       >
 
         <Marquee className={" mt-10"} gradient={false} speed={60} >
@@ -45,17 +70,37 @@ function App() {
         </Marquee>
         </div>
 
-       <div className="flex flex-col justify-center items-center mt-24 ">
-          <img src={start} alt="start" className="h-32 cursor-pointer hover:shadow-white rounded-full hover:shadow-md"/>
+       <div className="flex flex-col justify-center items-center mt-24">
+         <div className={clsx("w-32 group z-10", buttonPressed && "animate-wiggle")}
+              onClick={() =>{
+                setButtonPressed(true)
+                generateWrestler()
+              }}
+              onAnimationEnd={() => setButtonPressed(false)}
+         >
+          <img src={start} alt="start" className="h-32 cursor-pointer rounded-full group-hover:hidden"/>
+          <img src={startHover} alt="start" className="h-32 cursor-pointer rounded-full hidden group-hover:block"/>
+         </div>
         </div>
-        {/*<MoveExample/>*/}
+
+        {/*WRESTLERS*/}
+        <div className={'absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start overflow-hidden'}>
+          <img src={wrestler} alt="wrestler" style={{transform: `translate(${wrestlerPosition.x}px, ${wrestlerPosition.y}px)`}}
+               className={clsx(`w-32`,
+              wrestlerVisible ? `block animate-launch md:animate-launchBig` : 'hidden')}
+               onAnimationEnd={() => setWrestlerVisible(false)}
+          />
+        </div>
 
         {/*Footer:*/}
         <div className={"flex-col flex justify-center gap-5 my-8 text-center w-full"}>
 
           <div className={"flex flex-row w-full justify-center gap-16 items-end sm:gap-20"}>
           <img src={credit} alt="credits" className="h-2.5 sm:h-4 sm:ml-14 ml-4"/>
-          <img src={insertCoin} alt="credits" className="h-3 sm:h-5"/>
+            <div className={clsx("h-3 sm:h-5 group cursor-pointer z-10")}>
+            <img src={insertCoin} alt="credits" className="h-3 sm:h-5 group-hover:hidden"/>
+            <img src={insertCoinHover} alt="credits" className="h-3 sm:h-5 hidden group-hover:block"/>
+            </div>
           </div>
 
           <div className={"flex flex-row justify-center gap-5"}>
