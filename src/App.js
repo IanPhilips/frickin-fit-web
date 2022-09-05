@@ -64,9 +64,10 @@ function App() {
         </div>
 
         <div className={'flex flex-row w-full justify-center'}>
-        <Marquee className={" mt-10 w-full sm:w-2/3"} direction={"right"}  gradient={true} gradientColor={[0,0,0]} speed={30} gradientWidth={100} >
-          {Array.from(Array(5).keys()).map(i =>
-              <img key={i} src={questionMarquee} alt="Welcome Friend" className="h-5"/>)}}
+        <Marquee className={" mt-10 w-full sm:w-2/3"} direction={"right"}
+                 gradient={true} gradientColor={[0,0,0]} speed={30} gradientWidth={100} >
+          {Array.from(Array(10).keys()).map(i =>
+              <img key={i} src={questionMarquee} alt="?????????" className="h-5"/>)}}
         </Marquee>
         </div>
 
