@@ -84,9 +84,9 @@ function App() {
         </div>
 
         {/*WRESTLERS*/}
-        <div className={'absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start overflow-hidden'}>
+        <div className={'absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start'}>
           <img src={wrestler} alt="wrestler" style={{transform: `translate(${wrestlerPosition.x}px, ${wrestlerPosition.y}px)`}}
-               className={clsx(`w-32`,
+               className={clsx(`w-32 z-50`,
               wrestlerVisible ? `block animate-launch md:animate-launchBig` : 'hidden')}
                onAnimationEnd={() => setWrestlerVisible(false)}
           />
