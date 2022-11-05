@@ -10,7 +10,7 @@ import start from './img/start button.png';
 import startHover from './img/start_hover.png';
 import './App.css';
 import clsx from "clsx";
-import {useState} from "react";
+import React, {useState} from "react";
 import head1 from './img/transparent_wrestlers/80s_head.png'
 import head2 from './img/transparent_wrestlers/pinkkisshead.png'
 import head3 from './img/transparent_wrestlers/punkhead.png'
@@ -103,20 +103,16 @@ function App() {
             </div>
           </div>
 
-          <div className={"flex flex-row justify-center gap-5"}>
+          <div className={"flex flex-row justify-center gap-5 mt-8 z-10  sm:text-sm text-xs"}  >
             <a
-                className="App-link hover:underline text-sm"
-                href="https://twitter.com/FrickinFit"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="App-link hover:underline"
+                href={"https://twitter.com/FrickinFit"}
             >
               Twitter
             </a>
             <a
-              className="App-link hover:underline text-sm"
-              href="https://discord.gg/pFt75rGGsz"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="App-link hover:underline"
+              href={"https://discord.gg/pFt75rGGsz"}
             >
             Discord
           </a>

@@ -30,7 +30,10 @@
 }
 
 .App-link {
-  color: rgba(245,205,84, 0.7);
+  color: rgb(255, 204, 51, 1);
+  font-family: 'Press Start 2P', cursive;
+  text-decoration-color: #cd3333;
+cursor: pointer;
 }
 
 @keyframes App-logo-spin {
