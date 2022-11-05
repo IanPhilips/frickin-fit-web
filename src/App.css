@@ -28,6 +28,9 @@
   /*font-size: calc(10px + 2vmin);*/
   /*color: white;*/
 }
+.press-start{
+  font-family: 'Press Start 2P', cursive;
+}
 
 .App-link {
   color: rgb(255, 204, 51, 1);

@@ -3,7 +3,6 @@ import welcomeMarquee from './img/welcomefriend_marquee.png';
 import questionMarquee from './img/question_marquee.png';
 import introText from './img/are you ready.png';
 import largeTitle from './img/frickinfit_large.png';
-import credit from './img/credit.png';
 import insertCoin from './img/insertcoin.png';
 import insertCoinHover from './img/insert_coin_hover.png';
 import start from './img/start button.png';
@@ -15,9 +14,11 @@ import head1 from './img/transparent_wrestlers/80s_head.png'
 import head2 from './img/transparent_wrestlers/pinkkisshead.png'
 import head3 from './img/transparent_wrestlers/punkhead.png'
 import head4 from './img/transparent_wrestlers/tiarafloatinghead.png'
+import {Modal} from "./Modal";
 
 function App() {
   const [buttonPressed, setButtonPressed] = useState(false);
+  const [open, setOpen] = useState(false);
   const wrestlers = [ head1,head2,head3,head4]
   const [wrestler, setWrestler] = useState(head1);
   const [wrestlerVisible, setWrestlerVisible] = useState(false);
@@ -95,11 +96,11 @@ function App() {
         {/*Footer:*/}
         <div className={"flex-col flex justify-center gap-5 my-8 text-center w-full"}>
 
-          <div className={"flex flex-row w-full justify-center gap-16 items-end sm:gap-20"}>
-          <img src={credit} alt="credits" className="h-2.5 sm:h-4 sm:ml-14 ml-4"/>
+          <div className={"flex flex-row w-full justify-center gap-16 items-center sm:gap-20"}>
+              <span className={'press-start text-[#ffcc33] text-[.8rem] sm:text-xl sm:mt-0.5 mt-[0.15rem]'}>00 CREDIT</span>
             <div className={clsx("h-3 sm:h-5 group cursor-pointer z-10")}>
-            <img src={insertCoin} alt="credits" className="h-3 sm:h-5 group-hover:hidden"/>
-            <img src={insertCoinHover} alt="credits" className="h-3 sm:h-5 hidden group-hover:block"/>
+            <img src={insertCoin} alt="credits" className="h-3 sm:h-5 group-hover:hidden" />
+            <img src={insertCoinHover} alt="credits" className="h-3 sm:h-5 hidden group-hover:block" onClick={()=>setOpen(true)}/>
             </div>
           </div>
 
@@ -117,7 +118,17 @@ function App() {
             Discord
           </a>
           </div>
-
+            <Modal open={open} setOpen={setOpen} position={'center'}>
+                <div className={"flex flex-col justify-center items-center p-6 bg-[#ffcc33] rounded-md press-start text-sm  "}>
+                    Welcome to the FRICKIN FIT GYMNASIUM!
+                    <br/>
+                    <br/>
+                    <span>We'll be releasing a generative NFT collection of super-hot wrestlers soon!
+                        <br/>
+                        <br/>
+                        Follow us on <span> <a className={'text-[#cd3333]'} href={"https://twitter.com/FrickinFit"}>Twitter</a></span> to stay up to date.</span>
+                </div>
+            </Modal>
         </div>
     </div>
   );
