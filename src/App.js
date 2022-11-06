@@ -9,46 +9,56 @@ import start from './img/start button.png';
 import startHover from './img/start_hover.png';
 import './App.css';
 import clsx from "clsx";
-import React, {useState} from "react";
+import React, { useState} from "react";
 import head1 from './img/transparent_wrestlers/80s_head.png'
 import head2 from './img/transparent_wrestlers/pinkkisshead.png'
 import head3 from './img/transparent_wrestlers/punkhead.png'
 import head4 from './img/transparent_wrestlers/tiarafloatinghead.png'
+import head5 from './img/transparent_wrestlers/head-1.png'
+import head6 from './img/transparent_wrestlers/head-2.png'
+import head7 from './img/transparent_wrestlers/head-3.png'
+import grunt1 from './audio/grunt1.wav'
+import grunt2 from './audio/grunt2.wav'
 import {Modal} from "./Modal";
+import useSound from 'use-sound';
 
 function App() {
   const [buttonPressed, setButtonPressed] = useState(false);
   const [open, setOpen] = useState(false);
-  const wrestlers = [ head1,head2,head3,head4]
+  const [forward, setForward] = useState(true);
+    const [play1] = useSound(grunt1);
+    const [play2] = useSound(grunt2);
+  const wrestlers = [ head1,head2,head3,head4, head5, head6, head7];
   const [wrestler, setWrestler] = useState(head1);
   const [wrestlerVisible, setWrestlerVisible] = useState(false);
   const [wrestlerCount, setWrestlerCount] = useState(0);
+  const [wrestlerPosition, setWrestlerPosition] = useState(generateRandomPointOnScreen());
     function generateRandomPointOnScreen() {
         return {
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight
         };
     }
-    const [wrestlerPosition, setWrestlerPosition] = useState(generateRandomPointOnScreen());
   const generateWrestler = () => {
       if (wrestlerVisible)
           return
-      setWrestlerPosition(generateRandomPointOnScreen())
-      // count from 0 to wrestlers.length and then reset to 0
-        if (wrestlerCount === wrestlers.length - 1) {
-            setWrestlerCount(0);
-        }
-        else {
-            setWrestlerCount(wrestlerCount+1)
-        }
-    setWrestler(wrestlers[wrestlerCount])
+    // count from 0 to wrestlers.length and then reset to 0
+    setWrestlerPosition(generateRandomPointOnScreen())
     setWrestlerVisible(true)
+      //choose a ranomd number between 1 and 3:
+    // const random = Math.floor(Math.random() * 2) + 1;
+    //   if (random <= 1)
+    //     play1()
+    //   else if (random >= 2)
+    //     play2()
   }
 
-  const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen overflow-hidden'
+
+
+const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen overflow-hidden'
   return (
       <div
-          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat overflow-x-hidden')}
+          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat overflow-x-hidden no-scroll-bars')}
       >
 
         <Marquee className={" mt-10"} gradient={false} speed={60} >
@@ -85,11 +95,24 @@ function App() {
         </div>
 
         {/*WRESTLERS*/}
-        <div className={'absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start'}>
-          <img src={wrestler} alt="wrestler" style={{transform: `translate(${wrestlerPosition.x}px, ${wrestlerPosition.y}px)`}}
+        <div className={clsx('absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start',
+            `scaleX(${forward ? -1 : 1})`, 'no-scroll-bars')}
+        >
+          <img src={wrestler} alt="wrestler" style={{
+              transform: `translate(${wrestlerPosition.x}px, ${wrestlerPosition.y}px) scaleY(-1) scaleX(-1)`,
+          }}
                className={clsx(`w-32 z-50`,
-              wrestlerVisible ? `block animate-launch md:animate-launchBig` : 'hidden')}
-               onAnimationEnd={() => setWrestlerVisible(false)}
+              wrestlerVisible ? `block animate-launch md:animate-launchBig` : 'hidden'
+               )}
+               onAnimationEnd={() => {
+                   if (wrestlerCount === wrestlers.length - 1)
+                       setWrestlerCount(0)
+                   else
+                       setWrestlerCount(wrestlerCount+1)
+                   setWrestler(wrestlers[wrestlerCount])
+                   setWrestlerVisible(false)
+                   setForward(!forward)
+               }}
           />
         </div>
 
