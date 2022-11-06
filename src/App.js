@@ -58,7 +58,7 @@ function App() {
 const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen overflow-hidden'
   return (
       <div
-          className={clsx(parentClass, 'bg-black bg-[length:250px_250px] bg-iphonex bg-repeat overflow-x-hidden no-scroll-bars')}
+          className={clsx(parentClass, 'relative bg-black bg-[length:250px_250px] bg-iphonex bg-repeat overflow-x-hidden no-scroll-bars')}
       >
 
         <Marquee className={" mt-10"} gradient={false} speed={60} >
@@ -95,7 +95,7 @@ const parentClass = 'App-header flex flex-col mx-auto w-full pb-14  min-h-screen
         </div>
 
         {/*WRESTLERS*/}
-        <div className={clsx('absolute right-0 top-[10vh] -left-32 bottom-0 flex justify-start items-start',
+        <div className={clsx('absolute right-0 top-0 -left-32 bottom-0 flex justify-start items-start',
             `scaleX(${forward ? -1 : 1})`, 'no-scroll-bars')}
         >
           <img src={wrestler} alt="wrestler" style={{

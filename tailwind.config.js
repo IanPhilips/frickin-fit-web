@@ -14,11 +14,11 @@ module.exports = {
         launch: {
           "0%": { transform: "" },
           "50%": { transform: " translateY(30vh) translateX(55vw) scale(2)" },
-          "100%": { transform: "translateX(50vw)  translateY(200vh)"},
+          "100%": { transform: "translateX(50vw)  translateY(150vh)"},
         },launchBig: {
           "0%": { transform: "" },
           "50%": { transform: " translateY(40vh) translateX(53vw) scale(2)" },
-          "100%": { transform: "translateX(53vw)  translateY(200vh)"},
+          "100%": { transform: "translateX(53vw)  translateY(150vh)"},
         }
       },
       animation: {
